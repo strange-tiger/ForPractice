@@ -150,6 +150,11 @@ char* strstr(const char* str, const char* substr)
 	return NULL;
 }
 
+char* strreverse(char* str)
+{
+
+}
+
 int main(void)
 {
 	char a[19] = "ababababa";
