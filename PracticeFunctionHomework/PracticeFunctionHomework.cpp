@@ -12,7 +12,7 @@
 // 2. 작은 문제로 쪼갰다면 그 문제를 해결할 절차를 기술.
 // 3. 문제를 해결하기 위해 어떤 데이터가 필요한가? => 즉, 어떤 데이터를 저장해야 하는가?
 #include <stdio.h>
-#include <string.h>
+
 char* my_strcpy(char* str1, char* str2)
 {
 	while (*str1 != '\0')
