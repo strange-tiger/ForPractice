@@ -117,6 +117,12 @@ char* strrchr(const char* str, const char ch)
 char* strstr(const char* str, const char* substr)
 {
 	char* firstCh;
+	/*if (*str == '\0')
+	{
+		return (char*)str;
+	}
+	else
+	{*/
 	while (*str != '\0')
 	{
 		if (*str == *substr)
@@ -146,8 +152,7 @@ char* strstr(const char* str, const char* substr)
 
 		++str;
 	}
-
-	return NULL;
+	//}
 }
 
 int main(void)
@@ -159,13 +164,14 @@ int main(void)
 	strcat(a, b);
 	int strLength = strlen(a);
 	int strCompare = strcmp(a, b);
+	int strCompare = strcmp(a, b);
 
 	char* strFirstA = strchr(a, 'a');
 	char* strFirstB = strchr(b, 'b');
 	char* strLastA = strrchr(a, 'a');
 	char* strLastB = strrchr(b, 'b');
 
-	char c[4] = "aba";
+	char c[4] = "a";
 	char* strString = strstr(a, c);
 
 	printf("%s\n", a);
@@ -176,4 +182,6 @@ int main(void)
 	printf("%c %c\n", *strLastA, *strLastB);
 
 	printf("%s\n", strString);
+	printf("%p\n", strString);
+	printf("%p\n", a);
 }
