@@ -12,8 +12,8 @@
 // 2. 작은 문제로 쪼갰다면 그 문제를 해결할 절차를 기술.
 // 3. 문제를 해결하기 위해 어떤 데이터가 필요한가? => 즉, 어떤 데이터를 저장해야 하는가?
 #include <stdio.h>
-
-char* strcpy(char* str1, char* str2)
+#include <string.h>
+char* my_strcpy(char* str1, char* str2)
 {
 	while (*str1 != '\0')
 	{
@@ -25,7 +25,7 @@ char* strcpy(char* str1, char* str2)
 	return str1;
 }
 
-char* strcat(char* str1, char* str2)
+char* my_strcat(char* str1, char* str2)
 {
 	while (*str1 != '\0')
 	{
@@ -42,7 +42,7 @@ char* strcat(char* str1, char* str2)
 	return str1;
 }
 
-unsigned int strlen(char* str)
+unsigned int my_strlen(char* str)
 {
 	int strLength = 0;
 	while (*str != '\0')
@@ -54,7 +54,7 @@ unsigned int strlen(char* str)
 	return strLength;
 }
 
-int strcmp(char* str1, char* str2)
+int my_strcmp(char* str1, char* str2)
 {
 	int strCompare = 0;
 	while (*str1 != '\0' || *str2 != '\0')
@@ -78,7 +78,7 @@ int strcmp(char* str1, char* str2)
 	return strCompare;
 }
 
-char* strchr(const char* str, const char ch)
+char* my_strchr(const char* str, const char ch)
 {
 	while (*str != '\0')
 	{
@@ -93,7 +93,7 @@ char* strchr(const char* str, const char ch)
 	return NULL;
 }
 
-char* strrchr(const char* str, const char ch)
+char* my_strrchr(const char* str, const char ch)
 {
 	char* initstr = (char*)str;
 	while (*str != '\0')
@@ -114,15 +114,10 @@ char* strrchr(const char* str, const char ch)
 	return NULL;
 }
 
-char* strstr(const char* str, const char* substr)
+char* my_strstr(const char* str, const char* substr)
 {
-	char* firstCh;
-	/*if (*str == '\0')
-	{
-		return (char*)str;
-	}
-	else
-	{*/
+	char* firstCh = (char*)str;
+	
 	while (*str != '\0')
 	{
 		if (*str == *substr)
@@ -152,7 +147,8 @@ char* strstr(const char* str, const char* substr)
 
 		++str;
 	}
-	//}
+	str = firstCh;
+	return (char*)str;
 }
 
 int main(void)
@@ -160,19 +156,18 @@ int main(void)
 	char a[19] = "ababababa";
 	char b[19] = "babababab";
 
-	strcpy(a, b);
-	strcat(a, b);
-	int strLength = strlen(a);
-	int strCompare = strcmp(a, b);
-	int strCompare = strcmp(a, b);
+	my_strcpy(a, b);
+	my_strcat(a, b);
+	int strLength = my_strlen(a);
+	int strCompare = my_strcmp(a, b);
 
-	char* strFirstA = strchr(a, 'a');
-	char* strFirstB = strchr(b, 'b');
-	char* strLastA = strrchr(a, 'a');
-	char* strLastB = strrchr(b, 'b');
+	char* strFirstA = my_strchr(a, 'a');
+	char* strFirstB = my_strchr(b, 'b');
+	char* strLastA = my_strrchr(a, 'a');
+	char* strLastB = my_strrchr(b, 'b');
 
-	char c[4] = "a";
-	char* strString = strstr(a, c);
+	char c[4] = "";
+	char* strString = my_strstr(a, c);
 
 	printf("%s\n", a);
 	printf("%s\n", b);
