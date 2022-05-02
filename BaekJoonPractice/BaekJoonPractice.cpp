@@ -1,28 +1,28 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int pactorial(int P)
+int fibonacci(int F)
 {
-	int p = 1;
-	for (int i = 1; i <= P; i++)
+	int f;
+
+	if (F == 0 || F == 1)
 	{
-		p *= i;
+		f = F;
+	}
+	else
+	{
+		f = fibonacci(F - 1) + fibonacci(F - 2);
 	}
 
-	return p;
+	return f;
 }
 
 int main(void)
 {
-	int N = 0;
-	int K = 0;
-	scanf("%d %d", &N, &K);
-	
-	int N_P = pactorial(N);
-	int K_P = pactorial(K);
-	int notK_P = pactorial(N - K);
+	int N;
+	scanf("%d", &N);
 
-	int result = N_P / (K_P * notK_P);
+	int result = fibonacci(N);
 
 	printf("%d\n", result);
 
