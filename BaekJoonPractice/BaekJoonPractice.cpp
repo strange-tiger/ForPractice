@@ -1,31 +1,30 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 
-int main(void)
+int pactorial(int P)
 {
-	int N, M;
-	scanf("%d %d", &N, &M);
-	int cardNum[100] = { 0 };
-	for (int i = 0; i < N; i++)
+	int p = 1;
+	for (int i = 1; i <= P; i++)
 	{
-		scanf("%d", &cardNum[i]);
+		p *= i;
 	}
 
-	int sum = 0;
-	for (int i = 0; i < N; i++)
-	{
-		for (int j = i + 1; j < N; j++)
-		{
-			for (int k = j + 1; k < N; k++)
-			{
-				if (cardNum[i] + cardNum[j] + cardNum[k] <= M && cardNum[i] + cardNum[j] + cardNum[k] > sum)
-				{
-					sum = cardNum[i] + cardNum[j] + cardNum[k];
-				}
-			}
-		}
-	}
-	printf("%d", sum);
+	return p;
+}
+
+int main(void)
+{
+	int N = 0;
+	int K = 0;
+	scanf("%d %d", &N, &K);
+	
+	int N_P = pactorial(N);
+	int K_P = pactorial(K);
+	int notK_P = pactorial(N - K);
+
+	int result = N_P / (K_P * notK_P);
+
+	printf("%d\n", result);
 
 	return 0;
 }
