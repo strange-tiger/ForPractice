@@ -78,6 +78,23 @@ int my_strcmp(char* str1, char* str2)
 	return strCompare;
 }
 
+//// 최서연 : strcmp()
+//int strcmp(const char* str1, const char* str2) {
+//	while (*str1 != '\0') {
+//		if (*str1 != *str2) {
+//			//str1이 더 빠르면 음수 값이 반환되고
+//			//str2가 더 빠르면 양수 값이 반환된다.
+//			return *str1 - *str2;
+//		}
+//		str1++;
+//		str2++;
+//	}
+//
+//	//같으면 0이 반환된다.
+//	return *str1 - *str2;
+//
+//}
+
 char* my_strchr(const char* str, const char ch)
 {
 	while (*str != '\0')
