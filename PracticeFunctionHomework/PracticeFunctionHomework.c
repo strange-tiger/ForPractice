@@ -13,8 +13,9 @@
 // 3. 문제를 해결하기 위해 어떤 데이터가 필요한가? => 즉, 어떤 데이터를 저장해야 하는가?
 #include <stdio.h>
 
-char* my_strcpy(char* str1, char* str2)
+char* my_strcpy(char* str1, const char* str2)
 {
+	char* initstr = str1;
 	while (*str1 != '\0')
 	{
 		*str1 = *str2;
@@ -22,11 +23,12 @@ char* my_strcpy(char* str1, char* str2)
 		++str2;
 	}
 
-	return str1;
+	return initstr;
 }
 
-char* my_strcat(char* str1, char* str2)
+char* my_strcat(char* str1, const char* str2)
 {
+	char* initstr = str1;
 	while (*str1 != '\0')
 	{
 		++str1;
@@ -39,7 +41,7 @@ char* my_strcat(char* str1, char* str2)
 		++str2;
 	}
 
-	return str1;
+	return initstr;
 }
 
 unsigned int my_strlen(char* str)

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PracticeFunctionHomework.c">
+    <ClCompile Include="lacturePractice_220503.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
