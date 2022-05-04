@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{26ec7c2f-7d51-4d28-937d-a102b831c5b8}</ProjectGuid>
-    <RootNamespace>EnumerationPractice220503</RootNamespace>
+    <ProjectGuid>{dd1379f8-0bdd-4b1b-bbe6-6d8d1b32126d}</ProjectGuid>
+    <RootNamespace>lecturePractice220504</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="lacturePractice_220503.c" />
+    <ClCompile Include="lecturePractice_220504.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
