@@ -18,5 +18,16 @@
     <ClCompile Include="lecturePractice_220504.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="MyHeaderFile.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="conditionalCompile.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyHeaderFile.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
