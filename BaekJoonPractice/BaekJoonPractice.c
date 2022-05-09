@@ -12,36 +12,61 @@ int main(void)
 		scanf("%s", matrix[i]);
 	}
 
-	int maxCount = 0;
-	for (int i = 0; i <= M - 8; i++)
+	int minCount = 250;
+	for (int i = 0; i < M - 7; i++)
 	{
-		int count = 0;
 
-		for (int j = 0; j <= N - 8; j++)
+		for (int j = 0; j < N - 7; j++)
 		{
-			for (int k = i; k < i + 6; k++)
+			/*if (matrix[i][j] == 'W')
+			{*/
+			int count = 0;
+			for (int k = i; k < i + 8; k++)
 			{
-				for (int l = j; l < j + 6; l++)
+				for (int l = j; l < j + 8; l++)
 				{
-					if (matrix[k][l] == matrix[k + 1][l] || matrix[k][l] == matrix[k][l + 1])
+					if ((k + l) % 2 == 1 && matrix[k][l] == 'W')
+					{
+						count++;
+					}
+					else if ((k + l) % 2 == 0 && matrix[k][l] == 'B')
 					{
 						count++;
 					}
 				}
 			}
-			if (matrix[i + 6][j + 6] != matrix[i + 7][j + 7])
-			{
-				count++;
-			}
+			//}
 
-			if (maxCount < count)
+			if (minCount > count)
 			{
-				maxCount = count;
+				minCount = count;
 			}
+			count = 0;
+			/*else if (matrix[i][j] == 'B')
+			{*/
+			for (int k = i; k < i + 8; k++)
+			{
+				for (int l = j; l < j + 8; l++)
+				{
+					if ((k + l) % 2 == 1 && matrix[k][l] == 'B')
+					{
+						count++;
+					}
+					else if ((k + l) % 2 == 0 && matrix[k][l] == 'W')
+					{
+						count++;
+					}
+				}
+			}
+			if (minCount > count)
+			{
+				minCount = count;
+			}
+			//}
 		}
 	}
 
-	printf("%d", maxCount);
+	printf("%d", minCount);
 
 	return 0;
 }
